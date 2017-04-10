@@ -7,6 +7,7 @@ gem 'devise'
 require 'faker'
 
 gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 gem 'rails', '5.0.2'
 gem 'puma'
