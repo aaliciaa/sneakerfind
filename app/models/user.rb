@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :shoes, foreign_key: :owner_id
   has_many :rentals, foreign_key: :renter_id
   # has_many :offers, through: :shoes, source: :rentals
+
+  mount_uploader :photo, PhotoUploader
 end
