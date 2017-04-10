@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :shoes, foreign_key: :owner_id
+  has_many :rentals, foreign_key: :renter_id
+  # has_many :offers, through: :shoes, source: :rentals
 end

@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410070859) do
+ActiveRecord::Schema.define(version: 20170410080225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rentals", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "total_cost"
+    t.string   "status"
+    t.integer  "shoe_id"
+    t.integer  "renter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["renter_id"], name: "index_rentals_on_renter_id", using: :btree
+    t.index ["shoe_id"], name: "index_rentals_on_shoe_id", using: :btree
+  end
 
   create_table "shoes", force: :cascade do |t|
     t.string   "name"
@@ -21,10 +34,10 @@ ActiveRecord::Schema.define(version: 20170410070859) do
     t.string   "brand"
     t.integer  "size"
     t.integer  "unit_price"
-    t.string   "status"
     t.integer  "owner_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "available",   default: true
     t.index ["owner_id"], name: "index_shoes_on_owner_id", using: :btree
   end
 
@@ -47,5 +60,7 @@ ActiveRecord::Schema.define(version: 20170410070859) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "rentals", "shoes"
+  add_foreign_key "rentals", "users", column: "renter_id"
   add_foreign_key "shoes", "users", column: "owner_id"
 end

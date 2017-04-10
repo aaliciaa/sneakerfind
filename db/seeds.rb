@@ -6,24 +6,43 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Rental.destroy_all
+Shoe.destroy_all
+User.destroy_all
+
 20.times do
   user = User.new(
-    name: Faker::GameOfThrones.character
-    encrypted_password: "password"
-    email: Faker::Internet.email
+    name: Faker::GameOfThrones.character,
+    password: "password",
+    email: Faker::Internet.email,
     location: Faker::Address.city
     )
   user.save!
+  puts "A user has been saved."
   2.times do
     shoe = Shoe.new(
-      name:       Faker::Space.moon
-      brand:    %w(nike, puma, supreme, adidas, yohji yamamoto, gucci, chanel).sample
-      description: Faker::Friends.quote
-      size: (6..12).to_a.sample
-      unit_price: (5..20).to_a.sample
-      available: "available"
-      owner_id:
+      name:       Faker::Space.moon,
+      brand:    ["Nike", "Puma", "Supreme", "Adidas", "Yohji Yamamoto", "Gucci", "Chanel"].sample,
+      description: Faker::Friends.quote,
+      size: (6..12).to_a.sample,
+      unit_price: (5..20).to_a.sample,
+      owner: user
     )
     shoe.save!
+    puts "1 pair of shoes has been created."
   end
 end
+  puts "All done!"
+
+5.times do
+  rental = Rental.new(
+    start_date: Faker::Date.forward(2),
+    end_date: Faker::Date.forward(10),
+    total_cost: (200..500).to_a.sample,
+    status: "pending",
+    shoe: Shoe.order("RANDOM()").first,
+    renter: User.order("RANDOM()").first
+    )
+  rental.save!
+end
+
