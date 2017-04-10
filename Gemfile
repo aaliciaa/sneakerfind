@@ -6,6 +6,8 @@ gem 'devise'
 
 require 'faker'
 
+gem 'cloudinary'
+
 gem 'rails', '5.0.2'
 gem 'puma'
 gem 'pg'
