@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :rentals, foreign_key: :renter_id
   # has_many :offers, through: :shoes, source: :rentals
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, ProfilePhotoUploader
 end

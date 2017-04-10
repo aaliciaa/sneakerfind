@@ -20,9 +20,11 @@ User.destroy_all
   user.save!
   puts "A user has been saved."
   2.times do
+    brand = ["Nike", "Puma", "Supreme", "Adidas", "Yohji Yamamoto", "New Balance"].sample
     shoe = Shoe.new(
       name:       Faker::Space.moon,
-      brand:    ["Nike", "Puma", "Supreme", "Adidas", "Yohji Yamamoto", "Gucci", "Chanel"].sample,
+      brand:    brand,
+      photo: File.new(Rails.root.join("db/fixtures/#{brand.parameterize}.png")),
       description: Faker::Friends.quote,
       size: (6..12).to_a.sample,
       unit_price: (5..20).to_a.sample,
