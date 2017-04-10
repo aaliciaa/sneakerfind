@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 
-  resources :shoes
-  resources :rentals, only: [:index, :create, :new, :show, :edit, :update]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
 
-  patch 'offers/:id/approve', to: 'offers#approve'
-  patch 'offers/:id/decline', to: 'offers#decline'
+  resources :shoes do
+    resources :rentals, only: [:new, :create]
+  end
 
-  get '/profile', to: 'users#show'
+  resources :rentals, only: [:index, :show]
 
+  # patch 'offers/:id/approve', to: 'offers#approve'
+  # patch 'offers/:id/decline', to: 'offers#decline'
+  resources :offers, only: [:index] do
+    member do
+      patch :approve
+      patch :decline
+    end
+  end
+
+  # get '/profile', to: 'users#show'
+  resource :profile, only: [:show]
 end
