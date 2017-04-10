@@ -7,9 +7,13 @@ class CreateShoes < ActiveRecord::Migration[5.0]
       t.integer :size
       t.integer :unit_price
       t.string :status
-      t.references :owner_id, foreign_key: true
+      # t.references :user, foreign_key: true
+      t.integer :owner_id
 
       t.timestamps
     end
+
+    add_foreign_key :shoes, :users, column: :owner_id
+    add_index :shoes, :owner_id
   end
 end

@@ -4,6 +4,8 @@ ruby '2.3.3'
 # authentication
 gem 'devise'
 
+require 'faker'
+
 gem 'rails', '5.0.2'
 gem 'puma'
 gem 'pg'
