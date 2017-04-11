@@ -12,7 +12,6 @@ class RentalsController < ApplicationController
     @shoe = Shoe.new
   end
 
-  # POST   /shoes/:shoe_id/rentals(.:format)     rentals#create
   def create
     @rental = Rental.new(user_params)
     @shoe = Shoe.new(params[:shoe_id])
