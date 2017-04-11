@@ -9,7 +9,10 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = Shoe.create(shoe_params)
-    redirect_to shoe_path(shoe)
+    if @shoe.save
+      redirect_to shoe_path(shoe)
+    else
+      render :new
   end
 
   def new
