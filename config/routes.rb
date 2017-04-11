@@ -1,18 +1,4 @@
 Rails.application.routes.draw do
-  get 'shoes/index'
-
-  get 'shoes/show'
-
-  get 'shoes/create'
-
-  get 'shoes/new'
-
-  get 'shoes/edit'
-
-  get 'shoes/update'
-
-  get 'shoes/destroy'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 
