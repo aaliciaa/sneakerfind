@@ -2,3 +2,40 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.homepage {
+  body {
+    margin: 0;
+    // font-family: Open-sans, sans-serif;
+  }
+
+  h1 {
+    // font-family: Montserrat, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  h2 {
+    // font-family: Montserrat, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    color: #fff;
+    margin-top: -1px;
+  }
+
+  #categories {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-weight: 300;
+  }
+
+  .padded {
+    padding: 100px 0;
+  }
+
+  .wrapper-red {
+    background-color: $red;
+    padding-bottom: 40px;
+  }
+}

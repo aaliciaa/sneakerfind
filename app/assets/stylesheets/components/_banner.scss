@@ -35,13 +35,54 @@
 .banner-logo {
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 50px;
+  width: 120px;
 }
 
 .banner-avatar {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 57px;
+  right: 56px;
   border-radius: 50%;
-  width: 50px;
+  width: 45px;
+}
+
+/* Navbar search form */
+.navbar-wagon-search {
+  flex: 0 1 300px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px;
+  position: absolute;
+    top: 60px;
+    right: 120px;
+}
+.navbar-wagon-search-btn {
+  line-height: 40px;
+  color: #E6E6E6;
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 14px;
+  top: -2px;
+  z-index: 1;
+}
+.navbar-wagon-search-input {
+  flex: 0 1 300px;
+  transition: all 0.15s ease;
+  line-height: 40px;
+  font-weight: lighter;
+  color: #666666;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+}
+.navbar-wagon-search-input:focus  {
+  border: 1px solid #CCCCCC;
+}
+
+#red-background {
+  background-color: $red;
 }

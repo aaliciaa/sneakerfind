@@ -3,33 +3,4 @@
 @import "badges";
 @import "banner";
 @import "buttons";
-@import "cards";
-
-body {
-  margin: 0;
-  font-family: Open-sans, sans-serif;
-}
-
-h1 {
-  font-family: Montserrat, Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 600;
-  color: #fff;
-}
-
-h2 {
-  font-family: Montserrat, Helvetica, sans-serif;
-  font-size: 28px;
-  font-weight: lighter;
-  color: fff;
-  margin-bottom: 30px;
-  margin-top: 0;
-}
-
-.padded {
-  padding: 100px 0;
-}
-
-.wrapper-red {
-  background-color: #E93238;
-}
+@import "homepage-cards";
