@@ -8,9 +8,11 @@ class ShoesController < ApplicationController
   end
 
   def create
-    @shoe = Shoe.create(shoe_params)
+    @shoe = Shoe.new(shoe_params)
+    @shoe.owner = current_user
+    @shoe.available = true
     if @shoe.save
-      redirect_to shoe_path(shoe)
+      redirect_to shoe_path(@shoe)
     else
       render :new
     end
@@ -27,12 +29,17 @@ class ShoesController < ApplicationController
   def update
     @shoe = Shoe.find(params[:id])
     @shoe.update(shoe_params)
+    if @shoe.save
+      redirect_to shoe_path(@shoe)
+    else
+      render :edit
+    end
   end
 
   private
 
   def shoe_params
-   params.require(:shoe).permit(:name, :brand, :size, :description, :unit_price, :photo)
+   params.require(:shoe).permit(:name, :brand, :size, :description, :unit_price)
   end
 
   def destroy
