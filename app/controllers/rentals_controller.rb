@@ -9,7 +9,7 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
-    @shoe = Shoe.new
+    @shoe = Shoe.find(params[:shoe_id])
   end
 
   def create
