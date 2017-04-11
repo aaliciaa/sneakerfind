@@ -1,0 +1,47 @@
+/* Banner design */
+.banner {
+  color: white;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner h1 {
+  font-size: 40px;
+  font-weight: 600;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  line-height: 20px;
+}
+
+.banner h2 {
+  font-size: 40px;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  line-height: 20px;
+  margin-bottom: 40px;
+  font-weight: 200px;
+}
+
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.banner-logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.banner-avatar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  width: 50px;
+}

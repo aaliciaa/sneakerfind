@@ -1,0 +1,72 @@
+/* Card design */
+
+.features {
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+}
+
+.features h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/*Listing Card*/
+
+/* Your card CSS code here */
+.card {
+  height: 250px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.card-link:hover {
+  opacity: 0.1;
+}
+
+
+.card-user {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+.card-category {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.card-avatar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.card h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
