@@ -3,4 +3,6 @@ class Shoe < ApplicationRecord
   has_many :rentals
 
   mount_uploader :photo, ShoePhotoUploader
+
+
 end

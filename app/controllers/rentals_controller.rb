@@ -14,8 +14,11 @@ class RentalsController < ApplicationController
 
   def create
     @rental = Rental.new(user_params)
-    @shoe = Shoe.new(params[:shoe_id])
+    @shoe = Shoe.find(params[:shoe_id])
     @rental.shoe = @shoe
+    @rental.status = "pending"
+    @rental.total_cost = (@rental.end_date - @rental.start_date) * @shoe.unit_price
+    @rental.renter = current_user
 
     if @rental.save
       redirect_to rental_path(@rental)
@@ -27,6 +30,6 @@ class RentalsController < ApplicationController
   private
 
   def user_params
-    params.require(:rental).permit(:start_date, :end_date, :total_cost, :status)
+    params.require(:rental).permit(:start_date, :end_date)
   end
 end
