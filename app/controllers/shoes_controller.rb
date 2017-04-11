@@ -13,6 +13,7 @@ class ShoesController < ApplicationController
       redirect_to shoe_path(shoe)
     else
       render :new
+    end
   end
 
   def new
