@@ -4,7 +4,7 @@ ruby '2.3.3'
 # authentication
 gem 'devise'
 
-require 'faker'
+gem 'faker'
 
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
