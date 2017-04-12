@@ -1,5 +1,23 @@
 <h1>Full list of shoes</h1>
-<% @shoes.each do |shoe| %>
-  <h3><%= link_to "#{shoe.brand} #{shoe.name}", shoe_path(shoe) %></h3>
-  <h4>Size: <%= shoe.size %></h4>
-<% end %>
+
+<div class="container">
+  <div class="row content">
+    <div class="col-sm-8 left-half">
+      <% @shoes.each do |shoe| %>
+        <div class="col-md-6">
+          <h3 class="card-category"><%= link_to "#{shoe.brand} #{shoe.name}", shoe_path(shoe) %></h3>
+          <h4>Size: <%= shoe.size %></h4>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-sm-4 map">
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
