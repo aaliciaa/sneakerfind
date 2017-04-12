@@ -5,12 +5,13 @@
     <% @shoes.each do |shoe| %>
       <div class="col-sm-6">
         <div class="shoe-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path shoe.photo if shoe.photo.present? %>')">
-          <h2 class="shoe-card-category"><%= shoe.name.capitalize %></h2>
+          <h2 class="shoe-card-name"><%= shoe.name.capitalize %></h2>
+          <p class="shoe-card-brand"><%= shoe.brand.capitalize %></p>
+          <p class="shoe-card-size">Size: <%= shoe.size %></p>
         </div>
       </div>
     <% end %>
   </div>
-
 
   <div class="col-sm-4 map">
     <!-- MAP HERE -->
