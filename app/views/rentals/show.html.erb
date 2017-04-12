@@ -1,6 +1,8 @@
 
 
 
+<BR><BR>
+
 <div class="container text-center">
   <div class="row">
     <div class="col-sm-2">
@@ -8,39 +10,37 @@
       <%= image_tag "profile_pic.jpg", class: "avatar-large" %>
     </div>
     <div class="col-sm-2">
-      <%= image_tag "arrow.jpg", class: "avatar-large" %>
+      <%= image_tag "arrow.jpg" %>
     </div>
     <div class="col-sm-4">
       <p><%= @rental.shoe.name %></p>
-      <%= cl_image_tag @rental.shoe.photo, height: 200, width: 300, crop: :thumb, radius: 20, effect: :shadow %>
+      <%= cl_image_tag @rental.shoe.photo, height: 200, width: 300, crop: :thumb, radius: 20 %>
     </div>
     <div class="col-sm-2">
-      <%= image_tag "arrow.jpg", class: "avatar-large" %>
+      <%= image_tag "arrow.jpg" %>
     </div>
     <div class="col-sm-2">
       <p><%= @rental.shoe.owner.name %></p>
-      <%= image_tag "profile_pic.jpg", class: "avatar-large" %>
+      <%= image_tag "kanye.png", class: "avatar-large" %>
     </div>
   </div>
 </div>
 
 
-<div class="wrapper wrapper-spacing text-center">
-  <div class="summary wrapper-spacing">
     <h2>Rental Summary:</h2>
+<div class="wrapper-grey">
     <div class="container" style="width: 90rem">
-      <b>Status:</b><br/>
-      <%= @rental.status.capitalize %><hr>
-      <b>Start Date:</b><br/>
-      <%= @rental.start_date %><hr>
-      <b>End Date:</b><br/>
-      <%= @rental.end_date %><hr>
-      <b>Total Cost:</b><br/>
-      $ <%= @rental.total_cost %><hr>
+      <h3>Status:</h3><br/>
+      <p><%= @rental.status.capitalize %></p><hr>
+      <h3>Start Date:</h3><br/>
+      <p><%= @rental.start_date %></p><hr>
+      <h3>End Date:</h3><br/>
+      <p><%= @rental.end_date %></p><hr>
+      <h3>Total Cost:</h3><br/>
+      <p>$ <%= @rental.total_cost %></p><hr>
       <div class="button-padding">
         <%= link_to "Approve", shoe_path, {class: "btn btn-success"} %>
         <%= link_to "Decline", shoe_path, {class: "btn btn-success"} %>
       </div>
     </div>
-  </div>
 </div>
