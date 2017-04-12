@@ -1,28 +1,56 @@
-<div class="wrapper">
-  <div class="container" style="width: 90rem">
-    <div class="row">
-      <div class="col-xs-6">
-        <%= cl_image_tag @shoe.photo, height: 300, width: 400, crop: :fill %>
-      </div>
-      <div class="col-xs-6">
-      <b>Brand:</b> <%= @shoe.brand %><hr>
-      <b>Name:</b> <%= @shoe.name %><hr>
-      <b>Description:</b> <%= @shoe.description %><hr>
-      <b>Size:</b> <%= @shoe.size %><hr>
-      <b>Price per day:</b> $ <%= @shoe.unit_price %><hr>
-      </div>
+<BR><BR>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-2">
+      <h3><%= @shoe.owner.name %></h3>
+      <%= image_tag "profile_pic.jpg", class: "avatar-large" %>
+    </div>
+    <div class="col-sm-2">
+      <%= image_tag "arrow.jpg", class: "arrow" %>
+    </div>
+    <div class="col-sm-4">
+      <h3><%= @shoe.name %></h3>
+      <%= cl_image_tag @shoe.photo, height: 200, width: 300, crop: :thumb, radius: 20 %>
+    </div>
+    <div class="col-sm-2">
+      <%= image_tag "arrow.jpg", class: "arrow" %>
+    </div>
+    <div class="col-sm-2">
+      <h3>Kayne West</h3>
+      <%= image_tag "kanye.png", class: "avatar-large" %>
     </div>
   </div>
 </div>
-<div class="wrapper">
-  <div class="container text-center">
-    <div class="card">
-      <h3>Request to book</h3>
-      <%= simple_form_for([@shoe, @rental], html: { class: 'form-inline' }) do |f| %>
-        <%= f.input :start_date, wrapper_html: { class: 'username' }  %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, "Submit Rental Request", class: "btn btn-primary"%>
-      <% end %>
-    </div>
-  </div>
+<BR><BR><BR>
+
+<form action="/shoes" class="form-inline">
+  <input type="text" class="form-control date-dropper" data-theme="sneakerdate" placeholder="start date">
+  <input type="text" class="form-control date-dropper" data-theme="sneakerdate" placeholder="end date">
+    </select>
+  <input type="Confirm" value="Search" class="btn btn-primary">
+</form>
 </div>
+<BR><BR><BR>
+</div>
+
+<!--
+<div class="container" style="width: 90rem">
+  <div class="wrapper-grey">
+      <div class="row">
+        <div class="col-xs-12 col-md-6" id="shoe-shift">
+            <h3>Start Date:</h3><br/>
+            <p><%= @rental.start_date %></p><hr>
+            <h3>End Date:</h3><br/>
+            <p><%= @rental.end_date %></p><hr>
+            <h3>Total Cost:</h3><br/>
+            <p>$ <%= @rental.total_cost %></p><hr>
+          <div class="button-padding">
+          <%= link_to "Approve", shoes_path, {class: "btn btn-primary"} %>
+          <%= link_to "Decline", shoes_path, {class: "btn btn-primary"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ -->

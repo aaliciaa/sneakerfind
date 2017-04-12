@@ -15,15 +15,6 @@ ActiveRecord::Schema.define(version: 20170412065927) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "leasers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float    "latitude"
-    t.float    "longitude"
-  end
-
   create_table "rentals", force: :cascade do |t|
     t.date     "start_date"
     t.date     "end_date"
@@ -69,7 +60,6 @@ ActiveRecord::Schema.define(version: 20170412065927) do
     t.string   "location"
     t.string   "name"
     t.string   "photo"
-    t.string   "address"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
