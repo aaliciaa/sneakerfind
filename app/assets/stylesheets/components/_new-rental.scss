@@ -1,11 +1,13 @@
 
 
-// .photo-shadow {
-//   padding: 0px;
-//   box-shadow: 2px 2px 3px $red;
-// }
-
 .wrapper-grey {
+  background-color: #1F1D12;
+  padding: 15px 15px;
+  margin: 15px;
+}
+
+.wrapper-rental {
+  width: 100px;
   background-color: #1F1D12;
   padding: 15px 15px;
   margin: 15px;
@@ -30,6 +32,8 @@ p {
   margin-top: -9px;
   color: white;
 }
+
+
 
 .card>h3 {
   color: #fff;
