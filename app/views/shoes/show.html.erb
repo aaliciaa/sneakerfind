@@ -1,36 +1,27 @@
-
-
-<div class="wrapper wrapper-spacing">
-  <h2><%= @shoe.name %></h2>
+<div class="wrapper-spacing">
+  <h2><%= @shoe.name.capitalize %></h2>
   <div class="container" style="width: 90rem">
+      <div class="wrapper-grey">
     <div class="row">
-      <div class="col-xs-12 col-md-6" id="shoe-shift">
-        <%= cl_image_tag @shoe.photo, height: 300, width: 400, crop: :thumb, radius: 20, effect: :shadow %>
-      </div>
-      <div class="col-xs-6 col-md-6">
-      <b>Brand:</b><br/>
-      <%= @shoe.brand %><hr>
-      <b>Description:</b><br/>
-      <%= @shoe.description %><hr>
-      <b>Size:</b><br/>
-      <%= @shoe.size %><hr>
-      <b>Price per day:</b><br/>
-      $ <%= @shoe.unit_price %><hr>
+        <div class="col-xs-12 col-md-6" id="shoe-shift">
+          <%= cl_image_tag @shoe.photo, height: 300, width: 400, crop: :thumb, radius: 20 %>
+        </div>
+        <div class="col-xs-6 col-md-6">
+        <h3>Brand:</h3>
+        <p><%= @shoe.brand %><p><hr>
+        <h3>Description:</h3>
+        <p><%= @shoe.description %><p><hr>
+        <h3>Size:</h3>
+        <p><%= @shoe.size %><p><hr>
+        <h3>Price per day:</h3>
+        <p>$ <%= @shoe.unit_price %><p><hr>
+      <input type="submit" value="Back" class="btn btn-primary">
+      <input type="submit" value="Request to Rent" class="btn btn-primary">
+        </div>
       </div>
     </div>
   </div>
 </div>
+<BR>
 
-<div class="wrapper">
-  <div class="container text-center">
-    <div class="card">
-      <h3>Book Now!</h3>
-      <!-- Inline form -->
-      <form action="/shoes" class="form-inline">
-        <input type="text" class="form-control date-dropper" data-theme="sneakerdate" placeholder="start date">
-        <input type="text" class="form-control date-dropper" data-theme="sneakerdate" placeholder="end date">
-        <input type="submit" value="Request to Rent" class="btn btn-primary">
-      </form>
-    </div>
-  </div>
-</div>
+

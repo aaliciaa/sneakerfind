@@ -1,12 +1,19 @@
 
 
-.photo-shadow {
-  padding: 0px;
-  box-shadow: 2px 2px 3px $red;
+// .photo-shadow {
+//   padding: 0px;
+//   box-shadow: 2px 2px 3px $red;
+// }
+
+.wrapper-grey {
+  background-color: #1F1D12;
+  padding: 15px 15px;
+  margin: 15px;
 }
 
 .wrapper-spacing {
-padding-top: 65px;
+padding-top: 35px;
+padding-bottom: 20px;
 }
 
 .wrapper-spacing>h2 {
@@ -14,8 +21,18 @@ padding-top: 65px;
   padding-bottom: 30px;
 }
 
+h3 {
+  color: $red;
+  font-size: 15px;
+}
+
+p {
+  margin-top: -9px;
+  color: white;
+}
+
 .card>h3 {
-  color: $black;
+  color: #fff;
   padding-bottom: 12px;
   padding-top: 25px;
 }
