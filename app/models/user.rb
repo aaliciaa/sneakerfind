@@ -9,4 +9,7 @@ class User < ApplicationRecord
   # has_many :offers, through: :shoes, source: :rentals
 
   mount_uploader :photo, ProfilePhotoUploader
+
+  # geocoded_by :location
+  # after_validation :geocode, if: :location_changed?
 end

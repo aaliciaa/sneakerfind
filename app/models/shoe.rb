@@ -4,5 +4,10 @@ class Shoe < ApplicationRecord
 
   mount_uploader :photo, ShoePhotoUploader
 
+  geocoded_by :owner_location
+  after_validation :geocode
 
+  def owner_location
+    owner.location
+  end
 end
