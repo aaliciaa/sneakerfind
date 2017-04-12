@@ -11,10 +11,13 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
+    <% unless action_name == "home" %>
+      <%= render 'shared/navbar'  %>
+    <% end %>
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-    <%= render 'shared/navbar' %>
-      <%= yield %>
-      <%= javascript_include_tag 'application' %>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= render 'shared/footer' %>
   </body>
 </html>

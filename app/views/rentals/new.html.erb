@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="container" style="width: 90rem">
+    <div class="row">
+      <div class="col-xs-6">
+        <%= cl_image_tag @shoe.photo, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="col-xs-6">
+      <b>Brand:</b> <%= @shoe.brand %><hr>
+      <b>Name:</b> <%= @shoe.name %><hr>
+      <b>Description:</b> <%= @shoe.description %><hr>
+      <b>Size:</b> <%= @shoe.size %><hr>
+      <b>Price per day:</b> $ <%= @shoe.unit_price %><hr>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="container text-center">
+    <div class="card">
+      <h3>Request to book</h3>
+      <%= simple_form_for([@shoe, @rental], html: { class: 'form-inline' }) do |f| %>
+        <%= f.input :start_date, wrapper_html: { class: 'username' }  %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, "Submit Rental Request", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+</div>
