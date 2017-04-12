@@ -8,6 +8,8 @@
           <h2 class="shoe-card-name"><%= "#{shoe.name.capitalize} #{shoe.brand.capitalize}" %></h2>
           <p class="shoe-card-location"><%= shoe.owner.location.capitalize %></p>
           <p class="shoe-card-size">Size: <%= shoe.size %></p>
+          <!-- <a class="card-link" href="#" ></a> -->
+          <%= link_to "", shoe_path(shoe), {class: "card-link"} %>
         </div>
       </div>
     <% end %>
