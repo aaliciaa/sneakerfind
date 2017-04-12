@@ -15,8 +15,10 @@
         <p><%= @shoe.size %><p><hr>
         <h3>Price per day:</h3>
         <p>$ <%= @shoe.unit_price %><p><hr>
-      <input type="submit" value="Back" class="btn btn-primary">
-      <input type="submit" value="Request to Rent" class="btn btn-primary">
+          <!-- <input type="submit" value="Back" class="btn btn-primary"> -->
+          <%= link_to "Back", shoes_path, {class: "btn btn-primary"} %>
+          <%= link_to "Request to Rent", new_shoe_rental_path(@shoe), {class: "btn btn-primary"} %>
+          <!-- <input type="submit" value="Request to Rent" class="btn btn-primary"> -->
         </div>
       </div>
     </div>
