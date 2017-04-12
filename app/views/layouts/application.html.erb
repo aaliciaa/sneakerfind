@@ -10,17 +10,15 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-  <% if action_name != "home" %>
+
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
+    <% unless action_name == "home" %>
+      <%= render 'shared/navbar'  %>
+    <% end %>
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= render 'shared/footer' %>
-  <% else %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-  <% end %>
   </body>
 </html>
