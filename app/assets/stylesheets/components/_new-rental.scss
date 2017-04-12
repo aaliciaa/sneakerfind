@@ -1,0 +1,49 @@
+
+
+.photo-shadow {
+  padding: 0px;
+  box-shadow: 2px 2px 3px $red;
+}
+
+.wrapper-spacing {
+padding-top: 65px;
+}
+
+.wrapper-spacing>h2 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.card>h3 {
+  color: $black;
+  padding-bottom: 12px;
+  padding-top: 25px;
+}
+
+#shoe-shift {
+  padding-top: 40px;
+}
+
+.avatar-large {
+  width: 190px;
+  border-radius: 190%;
+}
+
+.summary {
+  background-color: $brand-color;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.row {
+  align: center;
+}
+
+.button-padding {
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+
+.workflow>p {
+  font-size: 24px;
+}

@@ -1,2 +1,46 @@
-<h1>Rentals#show</h1>
-<p>Find me in app/views/rentals/show.html.erb</p>
+
+
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-2">
+      <p><%= @rental.shoe.owner.name %></p>
+      <%= image_tag "profile_pic.jpg", class: "avatar-large" %>
+    </div>
+    <div class="col-sm-2">
+      <%= image_tag "arrow.jpg", class: "avatar-large" %>
+    </div>
+    <div class="col-sm-4">
+      <p><%= @rental.shoe.name %></p>
+      <%= cl_image_tag @rental.shoe.photo, height: 200, width: 300, crop: :thumb, radius: 20, effect: :shadow %>
+    </div>
+    <div class="col-sm-2">
+      <%= image_tag "arrow.jpg", class: "avatar-large" %>
+    </div>
+    <div class="col-sm-2">
+      <p><%= @rental.shoe.owner.name %></p>
+      <%= image_tag "profile_pic.jpg", class: "avatar-large" %>
+    </div>
+  </div>
+</div>
+
+
+<div class="wrapper wrapper-spacing text-center">
+  <div class="summary wrapper-spacing">
+    <h2>Rental Summary:</h2>
+    <div class="container" style="width: 90rem">
+      <b>Status:</b><br/>
+      <%= @rental.status.capitalize %><hr>
+      <b>Start Date:</b><br/>
+      <%= @rental.start_date %><hr>
+      <b>End Date:</b><br/>
+      <%= @rental.end_date %><hr>
+      <b>Total Cost:</b><br/>
+      $ <%= @rental.total_cost %><hr>
+      <div class="button-padding">
+        <%= link_to "Approve", shoe_path, {class: "btn btn-success"} %>
+        <%= link_to "Decline", shoe_path, {class: "btn btn-success"} %>
+      </div>
+    </div>
+  </div>
+</div>
