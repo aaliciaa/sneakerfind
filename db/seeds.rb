@@ -10,7 +10,7 @@ Rental.destroy_all
 Shoe.destroy_all
 User.destroy_all
 
-20.times do
+6.times do
   user = User.new(
     name: Faker::GameOfThrones.character,
     password: "password",
@@ -19,7 +19,7 @@ User.destroy_all
     )
   user.save!
   puts "A user has been saved."
-  2.times do
+  1.times do
     brand = ["Nike", "Puma", "Supreme", "Adidas", "Yohji Yamamoto", "New Balance"].sample
     shoe = Shoe.new(
       name:       Faker::Space.moon,
@@ -36,7 +36,7 @@ User.destroy_all
 end
   puts "All done!"
 
-5.times do
+6.times do
   rental = Rental.new(
     start_date: Faker::Date.forward(2),
     end_date: Faker::Date.forward(10),
