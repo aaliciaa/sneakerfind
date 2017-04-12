@@ -15,14 +15,14 @@ User.destroy_all
     name: Faker::GameOfThrones.character,
     password: "password",
     email: Faker::Internet.email,
-    location: Faker::Address.city
+    location: ["Tokyo", "New York", "London", "Sydney", "Paris", "Berlin"].sample
     )
   user.save!
   puts "A user has been saved."
   1.times do
     brand = ["Nike", "Puma", "Supreme", "Adidas", "Yohji Yamamoto", "New Balance"].sample
     shoe = Shoe.new(
-      name:       Faker::Space.moon,
+      name:     ["Airmax Z 667", "Fenty X25", "Skate Hi 1992", "Yeezy Boost 456", "Half Cab 1987", "Retro Hi '72"].sample,
       brand:    brand,
       photo: File.new(Rails.root.join("db/fixtures/#{brand.parameterize}.png")),
       description: Faker::Friends.quote,
