@@ -1,6 +1,12 @@
 class ShoesController < ApplicationController
   def index
     @shoes = Shoe.all
+    @shoes = Shoe.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@shoes) do |shoe, marker|
+      marker.lat shoe.latitude
+      marker.lng shoe.longitude
+    end
+
   end
 
   def show
