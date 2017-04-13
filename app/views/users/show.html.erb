@@ -1,32 +1,24 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
 
-<!-- wrapper -->
-<!-- container -->
-<!-- row -->
+<h2>Shoes I am Renting:</h2>
+<div class="container">
+  <div class="col-sm-8">
+      <% @rentals.to_a.each do |rental| %>
+        <div class="col-sm-6">
+          <div class="shoe-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path rental.shoe.photo if rental.shoe.photo.present? %>')">
+            <h2 class="shoe-card-name"><%= "#{rental.shoe.name.capitalize} #{rental.shoe.brand.capitalize}" %></h2>
+            <p class="shoe-card-location"><%= rental.shoe.owner.location.capitalize %></p>
+            <p class="shoe-card-size">Size: <%= rental.shoe.size %></p>
+            <!-- <a class="card-link" href="#" ></a> -->
+            <%= link_to "", shoe_path(rental.shoe), {class: "card-link"} %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
 
-<br><br><br><br><br>
-<hr>
-<h3>User Details:</h3>
-<h3><%= @user.id %></h3>
-<h3><%= @user.email %></h3>
-<h3><%= @user.photo %></h3>
-<hr>
-<h3>Shoes I'm Renting:</h3>
-<h3><%= @rentals.to_a.each do |rental| %></h3>
-   Start Date:  <%= rental.start_date %><br>
-   End Date:    <%= rental.end_date %><br>
-   <br>
-  <% end %>
-<hr>
-<h3>All my Shoes On the platform:</h3>
-<h3>(I don't have any shoe available to rent)</h3>
-<h3><%= @shoes.to_a %></h3>
-<hr>
-<h3>My Shoes that are on loan:</h3>
-<h3>(I don't have any shoes on loan)</h3>
-<h3><%= @shoes_on_loan.to_a %></h3>
-<br><br><br><br><br>
+
+
+
 
 
 
