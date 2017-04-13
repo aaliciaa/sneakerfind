@@ -29,16 +29,16 @@
       <div class="row">
         <div class="col-xs-12 col-md-6" id="shoe-shift">
             <h3>Start Date:</h3><br/>
-            <p><%= @rental.start_date %></p><hr>
+            <p><%= @rental.start_date.strftime("%A %B %Y") %></p><hr>
             <h3>End Date:</h3><br/>
-            <p><%= @rental.end_date %></p><hr>
+            <p><%= @rental.end_date.strftime("%A %B %Y") %></p><hr>
             <h3>Total Cost:</h3><br/>
             <p>$ <%= @rental.total_cost %></p><hr>
           <div class="button-padding">
-          <%= link_to "Book Now", shoe_rentals_path(@shoe), class: "btn btn-primary", method: :post %>
+          <%= link_to "Approve", shoes_path, {class: "btn btn-primary"} %>
+          <%= link_to "Decline", shoes_path, {class: "btn btn-primary"} %>
           </div>
         </div>
       </div>
     </div>
 </div>
-

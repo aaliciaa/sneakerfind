@@ -9,11 +9,18 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
+    # prepopulate the rental.new with the cookie data (dates)
+    @rental.start_date = Date.parse(session[:start_date])
+    @rental.end_date = Date.parse(session[:end_date])
     @shoe = Shoe.find(params[:shoe_id])
+    @rental.shoe =  @shoe
+    @rental.total_cost = (@rental.end_date - @rental.start_date) * @shoe.unit_price
   end
 
   def create
-    @rental = Rental.new(user_params)
+    @rental = Rental.new
+    @rental.start_date = Date.parse(session[:start_date])
+    @rental.end_date = Date.parse(session[:end_date])
     @shoe = Shoe.find(params[:shoe_id])
     @rental.shoe = @shoe
     @rental.status = "pending"
@@ -29,7 +36,7 @@ class RentalsController < ApplicationController
 
   private
 
-  def user_params
+  def rental_params
     params.require(:rental).permit(:start_date, :end_date)
   end
 end

@@ -16,12 +16,19 @@
         </div>
         <!-- <a class="btn btn-primary btn-lg">Let's go...</a> -->
       <!-- Inline form -->
-      <form action="/shoes" class="form-inline">
+      <%= form_tag shoes_path, method: "get", class: "form-inline" do %>
+        <%= text_field_tag :start_date, params[:start_date], class: "form-control date-dropper", data: { theme: "sneakerdate", format: "d-m-Y" } %>
+        <%= text_field_tag :end_date, params[:end_date], class: "form-control date-dropper", data: { theme: "sneakerdate", format: "d-m-Y"} %>
+        <%= button_tag(name: nil, type: "submit", value: "search", class: "btn btn-primary")%>
+      <% end %>
+
+
+      <!-- <form action="/shoes" class="form-inline">
         <input type="text" class="form-control date-dropper" data-theme="sneakerdate" placeholder="start date">
         <input type="text" class="form-control date-dropper" data-theme="sneakerdate" placeholder="end date">
           </select>
         <input type="submit" value="Search" class="btn btn-primary">
-      </form>
+      </form> -->
       </div>
     </div>
 
