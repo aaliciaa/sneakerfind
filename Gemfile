@@ -23,6 +23,9 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+#Facebook login
+gem 'omniauth-facebook'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
