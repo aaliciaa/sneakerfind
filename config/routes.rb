@@ -21,6 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # get '/profile', to: 'users#show'
-  resource :profile, only: [:show]
+  get '/profile', to: 'users#show'
+  # resource :profile, only: [:show]
 end
