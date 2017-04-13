@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user/show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 
@@ -21,6 +23,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # get '/profile', to: 'users#show'
-  resource :profile, only: [:show]
+  get '/profile', to: 'users#show'
+  # resource :profile, only: [:show]
 end
