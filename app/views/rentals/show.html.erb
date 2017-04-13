@@ -21,7 +21,7 @@
     </div>
     <div class="col-sm-2">
       <p><%= @rental.shoe.owner.name %></p>
-      <%= image_tag "kanye.png", class: "avatar-large" %>
+      <%= image_tag current_user.facebook_picture_url.gsub("square","large"), class: "avatar-large" %>
     </div>
   </div>
 </div>
