@@ -6,6 +6,12 @@
   margin: 15px;
 }
 
+.wrapper-white {
+  background-color: white;
+  padding: 15px 15px;
+  margin: 15px;
+}
+
 .wrapper-rental {
   width: 100px;
   background-color: #1F1D12;
@@ -37,8 +43,6 @@ p {
   color: white;
 }
 
-
-
 .card>h3 {
   color: #fff;
   padding-bottom: 12px;
@@ -47,11 +51,6 @@ p {
 
 #shoe-shift {
   padding-top: 40px;
-}
-
-.avatar-large {
-  width: 190px;
-  border-radius: 190%;
 }
 
 .summary {
@@ -65,8 +64,8 @@ p {
 }
 
 .button-padding {
-  padding-bottom: 35px;
-  padding-top: 10px;
+  // padding-bottom: 35px;
+  padding-top: 16px;
 }
 
 .workflow>p {
@@ -82,4 +81,8 @@ p {
   z-index:2;
   background: black;
   opacity: 0;
+}
+
+.table-responsive {
+  margin: 50px 50px;
 }
