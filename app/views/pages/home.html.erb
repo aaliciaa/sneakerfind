@@ -2,24 +2,36 @@
     <!-- Your banner code -->
     <div class="banner banner-gradient" id="banner-gradient" style="background-image: linear-gradient(to right, rgba(142, 158, 171, 0.3) 0%, rgba(238, 242, 243, 0.1) 0%), url('<%= image_path "background.jpg" %>');">
       <div class="banner-content">
+
+
           <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
+   <!--  <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
-      <%= image_tag "logo.png", alt: "logo", class: "banner-logo" %>
-        <h1 class="text-center">Luxury and Limited Edition</h1>
-        <div id="red-background">
-        <h2 class="text-center">sneakers for every occasion</h2>
-        </div>
-        <!-- <a class="btn btn-primary btn-lg">Let's go...</a> -->
+    </form> -->
+      <%= form_tag shoes_path, method: "get", class: "form-inline search-bar" do %>
+        <%= text_field_tag :search, nil, placeholder: "Search something", class: "form-control", data: { theme: "sneakerdate", format: "d-m-Y"} %>
+      <% end %>
+
+
+
+    <%= image_tag "logo.png", alt: "logo", class: "banner-logo" %>
+      <h1 class="text-center">Luxury and Limited Edition</h1>
+      <div id="red-background">
+      <h2 class="text-center">sneakers for every occasion</h2>
+      </div>
+      <!-- <a class="btn btn-primary btn-lg">Let's go...</a> -->
+      <!-- Login Button -->
+      <%= link_to "Login", new_user_session_path, {class: "btn btn-primary login"} %>
+      <%= link_to "Sign Up", new_user_registration_path, {class: "btn btn-primary sign-up"} %>
+
       <!-- Inline form -->
       <%= form_tag shoes_path, method: "get", class: "form-inline" do %>
         <%= text_field_tag :start_date, params[:start_date], class: "form-control date-dropper", data: { theme: "sneakerdate", format: "d-m-Y" } %>
         <%= text_field_tag :end_date, params[:end_date], class: "form-control date-dropper", data: { theme: "sneakerdate", format: "d-m-Y"} %>
-        <%= button_tag(name: nil, type: "submit", value: "search", class: "btn btn-primary")%>
+        <%= button_tag "Submit", class: "btn btn-primary"%>
       <% end %>
 
 
