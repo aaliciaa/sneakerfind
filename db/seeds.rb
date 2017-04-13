@@ -15,7 +15,7 @@ User.destroy_all
     name: Faker::GameOfThrones.character,
     password: "password",
     email: Faker::Internet.email,
-    location: ["Tokyo", "New York", "London", "Sydney", "Paris", "Berlin"].sample
+    location: ["Madrid", "Lisbon", "London", "Rome", "Paris", "Berlin"].sample
     )
   user.save!
   puts "A user has been saved."
