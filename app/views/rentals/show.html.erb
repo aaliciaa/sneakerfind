@@ -17,7 +17,7 @@
       <%= image_tag "arrow.jpg", class: "arrow" %>
     </div>
     <div class="col-sm-2">
-      <p><%= @rental.shoe.owner.name %></p>
+      <h3><%= @rental.shoe.owner.name %></h3>
       <%= image_tag current_user.facebook_picture_url.gsub("square","large"), class: "avatar-large" %>
     </div>
   </div>
