@@ -1,5 +1,7 @@
 class ShoesController < ApplicationController
   def index
+    session[:start_date] = params[:start_date]
+    session[:end_date] = params[:end_date]
     @shoes = Shoe.all
     @shoes = Shoe.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@shoes) do |shoe, marker|

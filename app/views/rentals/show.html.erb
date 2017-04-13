@@ -30,17 +30,17 @@
     <h2>Rental Summary:</h2>
 <div class="wrapper-grey">
     <div class="container" style="width: 90rem">
-      <h3>Status:</h3><br/>
-      <p><%= @rental.status.capitalize %></p><hr>
-      <h3>Start Date:</h3><br/>
+      <h3>Thanks for your request. The status is now: <%= @rental.status.capitalize %></h3><br/>
+      <p> The owner will approve or decline your request as soon as possible.</p><hr>
+      <!-- <h3>Start Date:</h3><br/>
       <p><%= @rental.start_date %></p><hr>
       <h3>End Date:</h3><br/>
       <p><%= @rental.end_date %></p><hr>
       <h3>Total Cost:</h3><br/>
-      <p>$ <%= @rental.total_cost %></p><hr>
-      <div class="button-padding">
+      <p>$ <%= @rental.total_cost %></p><hr> -->
+<!--       <div class="button-padding">
         <%= link_to "Approve", shoe_path, {class: "btn btn-success"} %>
-        <%= link_to "Decline", shoe_path, {class: "btn btn-success"} %>
+        <%= link_to "Decline", shoe_path, {class: "btn btn-success"} %> -->
       </div>
     </div>
 </div>
