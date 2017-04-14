@@ -10,7 +10,7 @@ Rental.destroy_all
 Shoe.destroy_all
 User.destroy_all
 
-6.times do
+1.times do
   user = User.new(
     name: Faker::GameOfThrones.character,
     password: "password",
@@ -19,22 +19,29 @@ User.destroy_all
     )
   user.save!
   puts "A user has been saved."
-  1.times do
-    brand = ["Nike", "Puma", "Supreme", "Adidas", "Yohji Yamamoto", "New Balance"].sample
+  names = ["Airmax Z 667", "Fenty X25", "Skate Hi 1992", "Yeezy Boost 456", "Half Cab 1987", "Retro Hi '72"]
+  brands = ["Nike", "Puma", "Supreme", "Adidas", "Yohji Yamamoto", "New Balance"]
+
+  for n in 0..5
+    my_brand = brands.first
+    brands.shift
     shoe = Shoe.new(
-      name:     ["Airmax Z 667", "Fenty X25", "Skate Hi 1992", "Yeezy Boost 456", "Half Cab 1987", "Retro Hi '72"].sample,
-      brand:    brand,
-      photo: File.new(Rails.root.join("db/fixtures/#{brand.parameterize}.png")),
-      description: Faker::Friends.quote,
+      name:     names.sample,
+      brand:    my_brand,
+      photo: File.new(Rails.root.join("db/fixtures/#{my_brand.parameterize}.png")),
+      description: ["Like new!", "Super Comfortable and Stylish!", "Perfect for everyday!", "Make's you Shine!!", "Super exclusive.", "Beyond Funk"].sample,
       size: (6..12).to_a.sample,
       unit_price: (5..20).to_a.sample,
       owner: user
     )
     shoe.save!
+    names.shift
     puts "1 pair of shoes has been created."
   end
 end
   puts "All done!"
+
+
 
 6.times do
   rental = Rental.new(
@@ -47,4 +54,6 @@ end
     )
   rental.save!
 end
+
+
 
