@@ -1,26 +1,32 @@
 
-<h2>Shoes I am Renting:</h2>
 <div class="container">
-  <div class="col-sm-8">
-      <% @rentals.to_a.each do |rental| %>
-        <div class="col-sm-6">
-          <div class="shoe-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path rental.shoe.photo if rental.shoe.photo.present? %>')">
-            <h2 class="shoe-card-name"><%= "#{rental.shoe.name.capitalize} #{rental.shoe.brand.capitalize}" %></h2>
-            <p class="shoe-card-location"><%= rental.shoe.owner.location.capitalize %></p>
-            <p class="shoe-card-size">Size: <%= rental.shoe.size %></p>
-            <!-- <a class="card-link" href="#" ></a> -->
-            <%= link_to "", shoe_path(rental.shoe), {class: "card-link"} %>
-          </div>
-        </div>
-      <% end %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="wrapper-grey text-center user-padding">
+        <%= image_tag current_user.facebook_picture_url.gsub("square","large"), class: "avatar-large" %>
+        <BR><BR><BR>
+        <p><%= current_user.first_name + " " + current_user.last_name %></p>
+        <p><%= current_user.email %></p>
+      </div>
     </div>
+
+    <div class="col-md-8">
+      <div class="wrapper-grey text-center">
+      <p class="user-padding">Shoes I am Renting:</p>
+        <div class="container-fluid">
+            <% @rentals.to_a.each do |rental| %>
+          <div class="col-xs-12 col-sm-6">
+                <div class="shoe-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path rental.shoe.photo if rental.shoe.photo.present? %>')">
+                  <h2 class="shoe-card-name"><%= "#{rental.shoe.name.capitalize} #{rental.shoe.brand.capitalize}" %></h2>
+                  <p class="shoe-card-location"><%= rental.shoe.owner.location.capitalize %></p>
+                  <p class="shoe-card-size">Size: <%= rental.shoe.size %></p>
+                  <!-- <a class="card-link" href="#" ></a> -->
+                  <%= link_to "", shoe_path(rental.shoe), {class: "card-link"} %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
