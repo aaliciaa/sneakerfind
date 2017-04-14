@@ -1,7 +1,7 @@
-
+<BR><BR>
 
 <div class="container text-center">
-  <div class="row wrapper-white">
+  <div class="row wrapper-grey">
     <div class="col-sm-2">
       <h3>Owner</h3>
       <%= image_tag "profile_pic.jpg", class: "avatar-large" %>
@@ -22,11 +22,23 @@
     </div>
   </div>
 
-  <div class="row wrapper-grey">
-    <div class="col-xs-12">
-    <h3>Thanks for your request. The status is now:</h3> <p><%= @rental.status.capitalize %></p>
+  <div class="wrapper-grey">
+    <div class="row">
+      <div class="col-xs-12">
+      <h3>Thanks for your request. The status is now:</h3> <p><%= @rental.status.capitalize %></p>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="text-center">
+         <div class="button-padding">
+          <%= link_to "Go to Profile", profile_path, class: "btn btn-primary button-margin" %>
+        <%= link_to "Search for another Shoe", root_path, class: "btn btn-primary button-margin" %>
+        </div>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 
 <BR><BR><BR>
