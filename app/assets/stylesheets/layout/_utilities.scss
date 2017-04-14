@@ -10,6 +10,19 @@
   padding-bottom: 5em;
 }
 
+.shoe-padding {
+  padding: 15px 25px;
+}
+
+.user-padding {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.table-padding {
+  padding-bottom: 7px;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -26,4 +39,13 @@
 
 .main {
   min-height: calc(100vh - 140px);
+}
+
+.wrapper-light-grey {
+ background-color: lightgrey;
+}
+
+// text
+#text-white {
+  color: white;
 }

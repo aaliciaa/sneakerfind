@@ -4,6 +4,7 @@
   background-color: #1F1D12;
   padding: 15px 15px;
   margin: 15px;
+  border-radius: 6px;
 }
 
 .wrapper-white {
@@ -66,6 +67,10 @@ p {
 .button-padding {
   // padding-bottom: 35px;
   padding-top: 16px;
+}
+
+.button-margin {
+  margin: 10px 4px;
 }
 
 .workflow>p {

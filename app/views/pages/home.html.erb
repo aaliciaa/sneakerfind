@@ -56,9 +56,6 @@
       </button>
     </form> -->
 
-
-
-
     <%= image_tag "logo.png", alt: "logo", class: "banner-logo" %>
       <h1 class="text-center">Luxury and Limited Edition</h1>
       <div id="red-background">
@@ -71,7 +68,7 @@
       <%= form_tag shoes_path, method: "get", class: "form-inline" do %>
         <%= text_field_tag :start_date, params[:start_date], class: "form-control date-dropper", data: { theme: "sneakerdate", format: "d-m-Y" } %>
         <%= text_field_tag :end_date, params[:end_date], class: "form-control date-dropper", data: { theme: "sneakerdate", format: "d-m-Y"} %>
-        <%= button_tag "Submit", class: "btn btn-primary"%>
+        <%= button_tag "Search", class: "btn btn-primary"%>
       <% end %>
 
 

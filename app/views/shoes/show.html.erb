@@ -1,29 +1,32 @@
 <div class="wrapper-spacing">
-  <h2><%= @shoe.name.capitalize %></h2>
   <div class="container" style="width: 90rem">
       <div class="wrapper-grey">
+  <h2 class="text-center" id="text-white"><%= @shoe.name.capitalize %></h2>
        <div class="row">
-        <div class="col-xs-12 col-md-6" id="shoe-shift">
-          <%= cl_image_tag @shoe.photo, height: 300, width: 400, crop: :thumb, radius: 20 %>
+        <div class="col-xs-12 col-md-6">
+          <div class="shoe-padding shoe-shift">
+            <%= cl_image_tag @shoe.photo, height: 300, width: 400, crop: :thumb, radius: 20 %>
+          </div>
         </div>
         <div class="col-xs-6 col-md-6">
-        <h3>Brand:</h3>
-        <p><%= @shoe.brand %><p><hr>
-        <h3>Description:</h3>
-        <p><%= @shoe.description %><p><hr>
-        <h3>Size:</h3>
-        <p><%= @shoe.size %><p><hr>
-        <h3>Price per day:</h3>
-        <p>$ <%= @shoe.unit_price %><p><hr>
-          <!-- <input type="submit" value="Back" class="btn btn-primary"> -->
-          <%= link_to "Back", shoes_path, {class: "btn btn-primary"} %>
-          <%= link_to "Request to Rent", new_shoe_rental_path(@shoe), {class: "btn btn-primary"} %>
-          <!-- <input type="submit" value="Request to Rent" class="btn btn-primary"> -->
+          <div class="shoe-padding">
+            <h3>Brand:</h3>
+            <p class="table-padding"><%= @shoe.brand %><p>
+            <h3>Description:</h3>
+            <p class="table-padding"><%= @shoe.description %><p>
+            <h3>Size:</h3>
+            <p class="table-padding"><%= @shoe.size %><p>
+            <h3>Price per day:</h3>
+            <p class="table-padding">$ <%= @shoe.unit_price %><p>
+              <!-- <input type="submit" value="Back" class="btn btn-primary"> -->
+              <%= link_to "Back", shoes_path, {class: "btn btn-primary"} %>
+              <%= link_to "Request to Rent", new_shoe_rental_path(@shoe), {class: "btn btn-primary"} %>
+              <!-- <input type="submit" value="Request to Rent" class="btn btn-primary"> -->
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 <BR>
 
 
