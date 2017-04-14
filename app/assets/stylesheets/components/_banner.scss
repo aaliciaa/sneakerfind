@@ -109,6 +109,10 @@
   height: 30px;
 }
 
+.search-bar {
+  margin-right: 10px;
+}
+
 .login-btns {
   margin-right: 10px;
 }
@@ -117,4 +121,9 @@
   top: 50px;
   right: 50px;
   display: flex;
+}
+
+.right-subnavbar-right {
+  display: flex;
+  align-items: center;
 }
